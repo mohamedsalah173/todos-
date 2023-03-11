@@ -4,3 +4,7 @@ const Todo = require('../models/todos');
 const create = (title, status) => {
   Todo.create({ title, status });
 };
+
+module.exports = {
+  create,
+};
