@@ -4,9 +4,20 @@ const express = require('express');
 const { mongoose } = require('mongoose');
 
 const todoSchema = new mongoose.Schema({
-  title: String,
-  status: { type: String, default: 'to-do' },
+  title: {
+    type: String,
+    minLength: 5,
+    maxLength: 10,
+    required: true,
+
+  },
+  status: {
+    type: String,
+    default: 'to-do',
+    enum: ['to-do', 'in-Progress', 'Done'],
+  },
   createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 });
 
 const Todo = mongoose.model('Todo', todoSchema);
