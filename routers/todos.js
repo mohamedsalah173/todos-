@@ -4,7 +4,10 @@ const { todoController } = require('../controllers');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.post('/', async (req, res) => {
   const { body: { title, status } } = req;
-  todoController.create(title, status);
+  const todo = await todoController.create(title, status);
+  res.json(todo);
 });
+
+module.exports = router;
