@@ -2,9 +2,7 @@
 
 const Users = require('../models/users');
 
-const create = (fName, lName) => {
-  Users.create({ fName, lName });
-};
+const create = (data) => Users.create(data);
 
 module.exports = {
   create,

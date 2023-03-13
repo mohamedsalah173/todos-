@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-extraneous-dependencies */
 const express = require('express');
@@ -10,6 +11,10 @@ const todoSchema = new mongoose.Schema({
     maxLength: 10,
     required: true,
 
+  },
+  userID: {
+    type: mongoose.Types.ObjectId,
+    ref: 'Users',
   },
   status: {
     type: String,

@@ -1,14 +1,16 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable no-use-before-define */
 /* eslint-disable import/no-extraneous-dependencies */
-const express = require(express);
+const express = require('express');
 
 const { default: mongoose } = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   userName: {
+    // _id: autoIncrement,
     type: String,
-    minLength: 8,
+    minLength: 5,
     unique: true,
     required: true,
 

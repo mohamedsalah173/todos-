@@ -1,9 +1,14 @@
+/* eslint-disable no-undef */
 const express = require('express');
+
+const todoRoutes = require('./todos');
+
+const userRourtes = require('./users');
 
 const router = express.Router();
 
-const todoRouter = require('./todos');
+router.use('/todos', todoRoutes);
 
-router.use('/todos', todoRouter);
+router.use('/users', userRourtes);
 
 module.exports = router;
